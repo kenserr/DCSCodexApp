@@ -24,5 +24,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('register/', views.RegisterUser.as_view(), name='register'),
     url(r'^login/', view.obtain_auth_token),
-    path('entries/',views.EntryList.as_view(), name='entries')
+    path('entries/',views.EntryList.as_view(), name='entries'),
+    path('groups/', views.GroupList.as_view(), name ='groups'),
+    path('users/', views.UserList.as_view(), name='users')
 ]

@@ -38,3 +38,13 @@ class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Entry 
         fields = ['date','name', 'info', 'group']
+
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id', 'email', 'groupz')
+
+class GroupSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Group
+        fields = ('name', 'users')

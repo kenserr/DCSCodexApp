@@ -17,7 +17,7 @@ from django.shortcuts import render
 from rest_framework.response import Response
 from rest_framework import status
 from .models import User, Group, Entry
-from .serializers import RegisterUserSerializer, EntrySerializer
+from .serializers import RegisterUserSerializer, EntrySerializer, UserSerializer, GroupSerializer
 from rest_framework.generics import ListAPIView, CreateAPIView
 
 # RegisterUser view used for account registration
@@ -28,3 +28,11 @@ class RegisterUser(CreateAPIView):
 class EntryList(ListAPIView):
     queryset = Entry.objects.all()
     serializer_class = EntrySerializer
+
+class UserList(ListAPIView):
+	queryset = User.objects.all()
+	serializer_class = UserSerializer
+
+class GroupList(ListAPIView):
+	queryset = Group.objects.all()
+	serializer_class = GroupSerializer

@@ -18,10 +18,10 @@ from django.contrib.auth.models import AbstractUser
 
 class User(AbstractUser):
      email = models.EmailField(unique=True) # Override Django user by making email unique
-
+     
 class Group(models.Model):
      name = models.CharField(max_length=50)
-
+     users = models.ManyToManyField(User, related_name='groupz')
      def __str__(self):
      	return self.name # Provides string name of Group object
 
