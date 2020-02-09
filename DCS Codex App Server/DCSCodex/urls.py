@@ -26,5 +26,6 @@ urlpatterns = [
     url(r'^login/', view.obtain_auth_token),
     path('entries/',views.EntryList.as_view(), name='entries'),
     path('groups/', views.GroupList.as_view(), name ='groups'),
-    path('users/', views.UserList.as_view(), name='users')
+    path('users/', views.UserList.as_view(), name='users'),
+    path('update/<int:id>', views.UserUpdate.as_view(), name='update')
 ]
